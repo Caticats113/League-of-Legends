@@ -1,0 +1,92 @@
+body{
+    background-image: url(./ChInfo/Aatroxfondo.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#HeadingName{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    width: auto;
+    height: 100px;
+    padding-left: 5%;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: large;
+}
+#container{
+    background-color: rgba(0, 0, 0, 0.637);
+    margin-right: 5%;
+    margin-left: 5%;
+    display: flex;
+    flex-direction: row;
+}
+#tittle{
+    padding-top: 1%;
+    padding-left: 2%;
+    color: white;
+}
+#Corasan{
+    position: absolute;
+    top: 20%;
+    right: 8%;
+}
+#texto{
+    padding-right: 48%;
+    padding-left: 5%;
+}
+#RoleDiff {
+    display: flex;
+    flex-direction: row;
+}
+.fight{
+    padding-left: 10%;
+}
+.letras{
+    padding-left: 1%;
+}
+.white{
+    color: white;
+}
+.gold{
+    color: #C28F2C;
+}
+.TextAbi{
+    color: white;
+    padding-left: 23%;
+}
+#Abilities{
+    display: flex;
+    flex-direction: row;
+    gap: 1.5%;
+    padding-left: 7%;
+}
+span p{
+    color: white;
+    margin-top: 0%;
+    padding-left: 40%;
+}
+#Abilities p{
+    color: #C28F2C;
+}
+.Aatrox{
+    display: flex;
+    flex-direction: row;
+    width: 10%;
+    align-items: center;
+    margin-top: 0%;
+
+}
+#atroz{
+    margin-top: -10%;
+        width: 40%;
+}
+#Cocontainer{
+    margin-right: -40%;
+}
+#baka{
+    margin-bottom: 1.05%;
+    width: 2.5%;
+}

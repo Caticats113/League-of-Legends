@@ -1,0 +1,245 @@
+body{
+    background-color: #030711;
+    color: white;
+    display: flex;
+    width: 99%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.barraSuperior{
+    position: fixed;
+    width: 100%;
+    height: 15%;
+    left: 0px;
+    top: 0px;
+
+    background: linear-gradient(180deg, #030711 57.29%, rgba(3, 7, 17, 0) 100%);
+}
+
+#textos{
+    width: 35%;
+    position: fixed;
+    top: 0%;
+    margin-top: 2.5%;
+    text-align: center;
+    cursor: pointer;
+}
+
+#textos a{
+    text-decoration: none;
+    color: white;
+    margin: 0% 5%;
+}
+
+#logos{
+    position: fixed;
+    width: 30%;
+    top: 0%;
+    left: 0%;
+    margin-top: 0.5%;
+}
+
+#logos img{
+    margin-right: 0.5%;
+}
+
+#pt1{
+    width: 100%;
+    height: max-content;
+    margin-top: 2.5%;
+    display: flex;
+    justify-content: center;
+}
+
+#fondo1{
+    width: 100%;
+}
+
+#logo1{
+    position: absolute;
+    width: 40%;
+    margin-top: 35%;
+}
+
+.pt2{
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-items: center;
+    align-items:center;
+    margin: 5% auto;
+}
+
+.iconos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#memoji2{
+    width: 80%;
+    mix-blend-mode: lighten;
+}
+
+#memoji1{
+    width: 100%;
+    margin: 15% 0%;
+    mix-blend-mode: lighten;
+}
+
+.memojiMain{
+    width: 100%;
+}
+
+#memojiGrande{
+mix-blend-mode: lighten;
+width: 90%;
+margin-bottom: -5%;
+}
+
+#textoNeiriña{
+    margin-top: -3%;
+}
+
+#linea{
+    background-color: white;
+    height: 2px;
+    width: 70%;
+    border-radius: 1px;
+    margin-top: 7.5%;
+}
+
+.pt3{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-image: url(./ImagenesHome/image\ 55.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.text3{
+    align-self: center;
+    text-align: center;
+    background-color: #030711a7;
+    border-radius: 10px;
+    padding: 3% 7%;
+    height: max-content;
+    margin-left: 10%;
+    margin-right: -10%;
+    display: flex;
+    flex-direction: column;
+}
+
+.text3 button{
+    background-color:#030711;
+    align-self: center;
+    color: white;
+    border: 0px;
+    padding: 5%;
+    width: 40%;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#akali{
+    width: 40%;
+}
+
+.pt4{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 5% auto;
+    width: 100%;
+    height: 100%;
+}
+
+.pt4 h2{
+    margin-bottom: 5%;
+}
+
+.carrousel{
+    display: flex;
+    flex-direction: row;
+    overflow-x: scroll;
+    width: 100%;
+    margin-left: 3%;
+    margin-right: 3%;
+    color: #030711;
+}
+
+::-webkit-scrollbar{
+    display: none;
+}
+
+.carrousel figure{
+    background-color: #D0A85C;
+    border-radius: 10px;
+}
+
+.footer{
+    width: 100%;
+}
+
+#flechitas{
+position: absolute;
+right: 3%;
+}
+
+#info{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#logoRG{
+width: 25%;
+}
+
+.footer span{
+    display: flex;
+    flex-direction: column;
+}
+
+.footer div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: -50%;
+}
+
+.footer div a{
+    color:white;
+    text-decoration: none;
+}
+
+.lineaF{
+    width: 3px;
+    border-radius: 1.5px;
+    height: 40px;
+    margin: 0% 3%;
+}
+
+#arriba figure{
+    background-color: white;
+}
+
+#abajo figure {
+    background-color:#D0A85C;
+}
+
+#abajo a{
+    color: #D0A85C;
+}
+
+#abajo{
+    margin-top: 3%;
+    margin-left: 1%;
+}

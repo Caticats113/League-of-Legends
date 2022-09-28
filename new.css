@@ -1,0 +1,89 @@
+#homebox {
+    background-color:#15B2D8;
+}
+
+
+.twn {
+    font-family: 'Montserrat';
+    font-style:initial;
+    font-size: 90%;
+    margin-left: 1.6%;
+    color: #FFFFFF;
+
+}
+
+
+.ttheme{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-size: 75%;
+    line-height: 20%;
+    color: #FFFFFF;
+    opacity: 0.5;
+    margin-top: 1%;
+}
+.ttitle{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-size: 90%;
+    line-height: 100%;
+    color: #FFFFFF;
+    margin-top: 0%;
+
+}
+.tdesc{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-size: 75%;
+    color: #FFFFFF;
+    margin-top: 0%;
+}
+
+.block1 {
+    position: absolute;
+    width: 40%;
+    height: 55%;
+    left: 20%;
+    top: 19%;
+    background-color: #030711;
+    padding: 1.5%;
+    border-radius: 7px;
+}
+.block23 {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+}
+.block2 {
+    position: absolute;
+    width: 30%;
+    height: 23%;
+    left: 64.5%;
+    top: 19%;
+    background-color: #030711;
+    padding: 1.5%;
+    border-radius: 7px;
+}
+
+.block3 {
+    position: absolute;
+    width: 30%;
+    height: 22%;
+    left: 64.5%;
+    top: 52%;
+    background-color: #030711;
+    padding: 1.5%;
+    border-radius: 7px;
+}
+
+.block4 {
+    position: absolute;
+    width: 74.5%;
+    height: 55%;
+    left: 20%;
+    top: 84%;
+    background: #030711;
+    border-radius: 7px;
+    padding: 1.5%;
+    margin-bottom: 30%;
+}
