@@ -11,8 +11,6 @@ console.log(characters);
 
 let cardsList = [];
 
-
-
 function generate(){
     for(let i=0; i<characters.length; i++){
         let id = i+1;
@@ -28,5 +26,24 @@ function generate(){
 generate();
 
 console.log(cardsList);
+
+
+let loadedFavorite = localStorage.getItem("favoriteList");
+if(loadedFavorite === null){
+    let favoriteList = [];
+} else{
+    favoriteList = JSON.parse(loadedFavorite);
+}
+
+function addFavoriteList(id){
+    favoriteList.push(cardsList[id-1]);
+    let json = JSON.stringify(favoriteList);
+    localStorage.setItem("favoriteList", json);
+    console.log(favoriteList);
+}
+
+
+
+
 
 
