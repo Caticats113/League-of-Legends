@@ -13,7 +13,8 @@ class Card{
         html += `<a href="${this.link}.html">
                     <img src="/Img/${this.img}.png" alt="" class="character" >
                 </a>
-                    <img class="heartCard" src="/Img/heartLine.png" onclick="addFavoriteList(${this.id})">
+                    <img class="hide" id="heartFill${this.id}" src="/Img/heartFill.png" onclick="addRemoveFavoriteList(${this.id})">
+                    <img class="heartCard" id="heart${this.id}" src="/Img/heartLine.png" onclick="addRemoveFavoriteList(${this.id})">
                     <p class="name">${this.name}</p>
                     <p class="rol">${this.rol}</p>`
 
@@ -22,7 +23,9 @@ class Card{
         card.innerHTML = html;
         container.appendChild(card);
 
+
     }
+
 
 
 }

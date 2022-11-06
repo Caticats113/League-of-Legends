@@ -51,16 +51,15 @@
 }
 
 .heartCard{
-    visibility: visible;
     width: 11%;
     margin-left: 85%;
     margin-top: 150%;
 }
 
-.displaynon{
+.hide{
     display: none;
-    visibility: hidden;
 }
+
 
 
 
