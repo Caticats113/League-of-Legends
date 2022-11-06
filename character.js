@@ -67,44 +67,20 @@ console.log(cardsList);
 
 
 
-//Creacion de una lista vacia donde van a estar las cartas favoritas
-let favoriteList = [];
-
-//Traer el localstorage de la favoriteList
-let loadedFavorite = localStorage.getItem("favoriteList");
-if(loadedFavorite === null){
-    favoriteList = [];
-} else{
-    favoriteList = JSON.parse(loadedFavorite);
-}
-
-//Al hacer click en el heart se añade una carta a la favoriteList
+//Al hacer click en el heart se cambia el estado del favorite a true o false y se guarda en el local storage
+//y se vuelven a generar las cartas con los cambios
 function addRemoveFavoriteList(num){
     if(cardsList[num].favorite === false){
-        document.getElementById("heart"+ num).classList.add("hide");
-        document.getElementById("heart"+ num).classList.remove("heartCard");
-        document.getElementById("heartFill"+ num).classList.remove("hide");
-        document.getElementById("heartFill"+ num).classList.add("heartCard");
         cardsList[num].favorite= true;
-        favoriteList.push(cardsList[num]);
-        let json = JSON.stringify(favoriteList);
-        localStorage.setItem("favoriteList", json);
-        let json2 = JSON.stringify(cardsList);
-        localStorage.setItem("cardsList", json2);
+        let json = JSON.stringify(cardsList);
+        localStorage.setItem("cardsList", json);
         generate();
 
 
     } else {
-        document.getElementById("heart"+ num).classList.remove("hide");
-        document.getElementById("heart"+ num).classList.add("heartCard");
-        document.getElementById("heartFill"+ num).classList.add("hide");
-        document.getElementById("heartFill"+ num).classList.remove("heartCard");
         cardsList[num].favorite = false;
-        favoriteList.splice(0,1);
-        let json = JSON.stringify(favoriteList);
-        localStorage.setItem("favoriteList", json);
-        let json2 = JSON.stringify(cardsList);
-        localStorage.setItem("cardsList", json2);
+        let json = JSON.stringify(cardsList);
+        localStorage.setItem("cardsList", json);
         console.log(cardsList[num]);
         generate();
 
