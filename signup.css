@@ -47,7 +47,7 @@ color: #15B2D8;
 #inputs{
     margin-top: 7%;
 }
-.User{
+#UserInput{
     background-color: rgb(255, 255, 255);
     width: 38%;
     height: 40px;
@@ -55,7 +55,7 @@ color: #15B2D8;
     border-radius: 20px;
     margin-left: 7%;
 }
-.Birthday{
+#BirthdayInput{
     background-color: rgb(245, 245, 245);
     width: 35%;
     height: 40px;
@@ -63,7 +63,7 @@ color: #15B2D8;
     border-radius: 20px;
     margin-left: 5%;
 }
-.Email{
+#EmailInput{
     background-color: rgb(245, 245, 245);
     width: 83%;
     height: 50px;
@@ -72,7 +72,7 @@ color: #15B2D8;
     margin-left: 7%;
     margin-top: 7%;
 }
-.Password{
+#PasswordInput{
     background-color: rgb(245, 245, 245);
     width: 83%  ;
     height: 50px;
@@ -81,7 +81,7 @@ color: #15B2D8;
     margin-left: 7%;
     margin-top: 7%;
 }
-.butt{
+#createBtn{
     background-color: #15B2D8;
     border: none;
     width: 35%;
