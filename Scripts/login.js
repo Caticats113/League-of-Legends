@@ -13,20 +13,22 @@ function login(){
         console.log(users);
         let email = EmailInput.value;
         let password = PasswordInput.value; 
-        for(let i = 0; i < users.legth; i++){
-            if(users[i].password === password){
-                window.location.href = "Main.html"
-                let currentUSer = JSON.stringify(user[i]);
-                localStorage.setItem("currentUser", currentUSer)
-                return;
-
-            }else{
-                alert('La contraseña es incorrecta')
-                return;
+        for(let i = 0; i < users.length; i++){
+            if(users[i].email === email){
+                if(users[i].password === password){
+                    window.location.href = "Main.html"
+                    let currentUSer = JSON.stringify(user[i]);
+                    localStorage.setItem("currentUser", currentUSer)
+                    return;
+    
+                }else{
+                    alert('Email o contraseña son incorrectos')
+                    return;
+                }
             }
+            
 
         };
     }
-   
 };
 logBtn.addEventListener('click', login)

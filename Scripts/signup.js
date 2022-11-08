@@ -22,7 +22,8 @@ function signup(){
         UserInput.value,
         BirthdayInput.value,
         EmailInput.value,
-        PasswordInput.value
+        PasswordInput.value,
+        users.length
     );
     users.push(user);
     let json = JSON.stringify(users);
