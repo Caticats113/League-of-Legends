@@ -20,7 +20,6 @@ function login(){
                     let currentUSer = JSON.stringify(user[i]);
                     localStorage.setItem("currentUser", currentUSer)
                     return;
-    
                 }else{
                     alert('Email o contraseña son incorrectos')
                     return;
