@@ -60,6 +60,18 @@
     display: none;
 }
 
+#buscador{
+    background-color:#c2902c00;
+    border-color: #C28F2C;
+    border-radius: 20px;
+    margin-left: 40px;
+    padding: 6px;
+    color:#15B2D8;
+}
+
+#buscador ::placeholder{
+    color: #C28F2C;
+}
 
 
 
