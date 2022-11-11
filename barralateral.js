@@ -1,39 +1,34 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Favorites</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./main.css">
-    <link rel="stylesheet" href="./favorite.css">
-    <link rel="stylesheet" href="./character.css">
-</head>
-<body class="body">
-    <div class="menubar">
+class Barra{
+    constructor(img, user, puntos, rango){
+        this.img = img;
+        this.user = user;
+        this.puntos = puntos;
+        this.rango = rango;
+    }
+    renderSidebar(container){
+       console.log(this.rango)
+        let html = "";
+        html = `
         <div class="logos">
             <img src="./Img/logo.png" alt="" id="log1">
             <img src="./Img/logoLOL.webp" alt="" id="log2" >
         </div>
         <div class="profile">
-            <img src="./Img/profileimg.png" alt="profileimg" id="profileimg">
+            <img src="${this.img}" alt="profileimg" id="profileimg">
             <img src="./Img/border.png" alt="profileborder" id="profileborder">
         </div>
         <div class="textprofile">
-                <p class="topacity">Profile</p>
-                <p id="username">Anne_de_larregui</p>
-                <p id="usern">Username</p>
+            <p class="topacity" id="tprofile">Profile</p>
+            <p id="username">${this.user}</p>
+            <p id="usern">Username</p>
         </div>
 
 
 
         <div class="boxpoints">
             <div class="yellow">
-                <label class="tyellow" id="t1000" >10000px</label>
-                <label class="tyellow" id="tgrand" >Grandmaster II</label>
+                <label class="tyellow" id="t1000" >${this.puntos}</label>
+                <label class="tyellow" id="tgrand" >${this.rango}</label>
 
             </div>
             <div class="textsmall">
@@ -68,19 +63,14 @@
                     <p class="fws" id="fleave">Leave</p>
                 </div>
             </a>
-        </div>
-    </div>
 
-    <div class="barra">
-        <p class="twn">Favorites</p>
-    </div>
+        </div>`
 
-    <div id="cards" >
+    let barraLat = document.createElement(`div`)
+        barraLat.innerHTML = html;
+        console.log(barraLat)
+        container.appendChild(barraLat);
+    
 
-    </div>
-
-</body>
-<script src="./barralateral.js"></script>
-<script src="./Card.js"></script>
-<script src="./favorite.js"></script>
-</html>
+    }
+}
