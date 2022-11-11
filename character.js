@@ -1,4 +1,5 @@
 const cards = document.getElementById('cards');
+const menubar = document.getElementById('menubar')
 
 //Lista de personajes
 let characters = [];
@@ -87,6 +88,8 @@ function addRemoveFavoriteList(num){
     }
 
 }
+
+renderSidebar(menubar)
 
 
 
