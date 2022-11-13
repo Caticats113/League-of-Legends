@@ -6,7 +6,7 @@ class Barra{
         this.rango = rango;
     }
     renderSidebar(container){
-       console.log(this.rango)
+    console.log(this.rango)
         let html = "";
         html = `
         <div class="logos">
@@ -20,7 +20,7 @@ class Barra{
         <div class="textprofile">
             <p class="topacity" id="tprofile">Profile</p>
             <p id="username">${this.user}</p>
-            <a href="./"> id="usern">Username</a>
+            <a href="./" id="usern">Edit profile</a>
         </div>
 
 
@@ -70,7 +70,7 @@ class Barra{
         barraLat.innerHTML = html;
         console.log(barraLat)
         container.appendChild(barraLat);
-    
+
 
     }
 }
