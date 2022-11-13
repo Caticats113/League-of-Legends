@@ -20,7 +20,7 @@ class Barra{
         <div class="textprofile">
             <p class="topacity" id="tprofile">Profile</p>
             <p id="username">${this.user}</p>
-            <p id="usern">Username</p>
+            <a href="./"> id="usern">Username</a>
         </div>
 
 
