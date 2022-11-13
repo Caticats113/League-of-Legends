@@ -22,7 +22,7 @@ createList()
 function renderIcon(container){
     let html = "";
     html = `<img src="${images[0]} " alt="Memoji de Anne" onclick="create(${0})"class="memoji2" id="icon0">
-            <img src="${images[1]}" alt="Memoji de Neira" onclick="create(${1})" class="memoji1" id="icon1">
+            <img src="${images[1]}" alt="Memoji de Neira" onclick="create(${1})" class="memoji2" id="icon1">
             <img src="${images[2]}" alt="Memoji de Cata" onclick="create(${2})" class="memoji2" id="icon2">`
 
     let icons = document.createElement(`div`)
