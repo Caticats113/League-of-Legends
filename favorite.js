@@ -45,13 +45,13 @@ function addRemoveFavoriteList(num){
 
 }
 //data mockup , a partir de este punto se realiza un data mockup ya que aun no se ha terminado el localStorage, maa que todo es para hacerse una idea de las variables. 
-let img = "./Img/profileimg.png"; 
-let username = "Anne_de_larregui";
-let point = "10000pt";
-let range = "granmaster II";
+let imgnice = "./Img/profileimg.png"; 
+let usernamenice = "Anne_de_larregui";
+let pointnice = "10000pt";
+let rangenice = "granmaster II";
 
 let barrita = new Barra(
-    img, username, point, range
+    imgnice, usernamenice, pointnice, rangenice
 )
 barrita.renderSidebar(menubar);
 
