@@ -1,4 +1,5 @@
 const cards = document.getElementById('cards');
+const menubar = document.getElementById('menubar')
 
 //Lista de personajes
 let characters = [];
@@ -106,3 +107,20 @@ function addRemoveFavoriteList(num){
 function characterDetail(id){
     window.location.href = `./characterDetail.html?id=`+ id;
 }
+
+let imagennice = "./Img/profileimg.png";
+let usernamenice = "Anne_de_larregui";
+let pointnice = "10000pt";
+let rangenice = "Granmaster II";
+
+let barrita = new Barra(
+    imagennice, usernamenice, pointnice, rangenice
+)
+barrita.renderSidebar(menubar)
+
+
+
+
+
+
+

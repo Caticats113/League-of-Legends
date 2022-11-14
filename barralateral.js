@@ -6,7 +6,9 @@ class Barra{
         this.rango = rango;
     }
     renderSidebar(container){
-        let html = `<div class="menubar">
+    console.log(this.rango)
+        let html = "";
+        html = `
         <div class="logos">
             <img src="./Img/logo.png" alt="" id="log1">
             <img src="./Img/logoLOL.webp" alt="" id="log2" >
@@ -18,7 +20,7 @@ class Barra{
         <div class="textprofile">
             <p class="topacity" id="tprofile">Profile</p>
             <p id="username">${this.user}</p>
-            <p id="usern">Username</p>
+            <a href="./editprofile.html" id="usern">Edit profile</a>
         </div>
 
 
@@ -62,7 +64,13 @@ class Barra{
                 </div>
             </a>
 
-        </div>
-    </div>`
+        </div>`
+
+    let barraLat = document.createElement(`div`)
+        barraLat.innerHTML = html;
+        console.log(barraLat)
+        container.appendChild(barraLat);
+
+
     }
 }
