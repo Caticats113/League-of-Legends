@@ -1,17 +1,20 @@
 
 class Card{
-    constructor(id, name, rol, img, favorite){
+    constructor(id, name, rol, img, favorite, subname, description, difficulty){
         this.id = id;
         this.name = name;
         this.rol = rol;
         this.img = img;
         this.favorite = favorite;
+        this.subname = subname;
+        this.description = description;
+        this.difficulty = difficulty;
     }
 
     render(container){
         let html = "";
         html += `<div id="card${this.id}">
-                    <a href="${this.link}.html">
+                    <a onclick="characterDetail(${this.id})">
                         <img src="./Img/${this.img}.png" alt="" class="character" >
                     </a>
                     <img class="hide" id="heartFill${this.id}" src="./Img/heartFill.png" onclick="addRemoveFavoriteList(${this.id})">
@@ -24,10 +27,6 @@ class Card{
         card.classList.add("card")
         card.innerHTML = html;
         container.appendChild(card);
-
-
     }
-
-
 
 }

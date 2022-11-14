@@ -1,8 +1,8 @@
 class Card{
 
-    constructor(id, chName, subname, splashart, champion, description, role, roleImg, difficulty, difficultyImg, p, q, w, e, r){
+    constructor(id, name, subname, splashart, champion, description, role, roleImg, difficulty, difficultyImg, p, q, w, e, r){
         this.id = id;
-        this.chName = chName;
+        this.name = name;
         this.subname = subname;
         this.splashart = splashart;
         this.champion = champion;
@@ -17,9 +17,9 @@ class Card{
         this.e = e;
         this.r = r;
     }
-    render(where, body) {
+    render(where) {
         let html = `
-        <div id="HeadingName"><h1><b>${this.chName}</b></h1></div>
+        <div id="HeadingName"><h1><b>${this.name}</b></h1></div>
         <div id="container">
         <div id="Cocontainer">
             <div id="tittle">
@@ -59,7 +59,6 @@ class Card{
         where.innerHTML = html;
 
         body.style.backgroundImage = `url(${this.splashart})`;
-
     }
 
 }
