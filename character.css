@@ -1,4 +1,4 @@
-.cards {
+#cards {
     width: 78%;
     height: 100%;
     position: absolute;
@@ -24,7 +24,7 @@
 }
 
 
-#name{
+.name{
     position: absolute;
     top: 77%;
     font-family: 'Montserrat';
@@ -34,7 +34,7 @@
     color: #C28F2C;
 }
 
-#rol{
+.rol{
     position: absolute;
     top: 88%;
     font-family: 'Montserrat';
@@ -44,12 +44,34 @@
     color: #15B2D8;
 }
 
-#character{
+.character{
     position: absolute;
     width: 94%;
     height: 81%;
 }
 
+.heartCard{
+    width: 11%;
+    margin-left: 85%;
+    margin-top: 150%;
+}
+
+.hide{
+    display: none;
+}
+
+#buscador{
+    background-color:#c2902c00;
+    border-color: #C28F2C;
+    border-radius: 20px;
+    margin-left: 40px;
+    padding: 6px;
+    color:#15B2D8;
+}
+
+#buscador ::placeholder{
+    color: #C28F2C;
+}
 
 
 

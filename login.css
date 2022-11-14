@@ -49,7 +49,7 @@ color: #15B2D8;
 #inputs a{
     text-decoration: none;
 }
-.Email{
+#EmailInput{
     background-color: rgb(245, 245, 245);
     width: 83%;
     height: 50px;
@@ -58,7 +58,7 @@ color: #15B2D8;
     margin-left: 4%;
     margin-top: 1%;
 }
-.Password{
+#PasswordInput{
     background-color: rgb(245, 245, 245);
     width: 83%;
     height: 50px;
@@ -67,7 +67,7 @@ color: #15B2D8;
     margin-left: 4%;
     margin-top: 5%;
 }
-.butt{
+#logBtn{
     background-color: #15B2D8;
     border: none;
     width: 37%;
