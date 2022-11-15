@@ -20,7 +20,7 @@ class Barra{
         <div class="textprofile">
             <p class="topacity" id="tprofile">Profile</p>
             <p id="username">${this.user}</p>
-            <a href="/editprofile.html" id="usern">Edit profile</a>
+            <a href="./editprofile.html" id="usern">Edit profile</a>
         </div>
 
 
@@ -70,7 +70,6 @@ class Barra{
         barraLat.innerHTML = html;
         console.log(barraLat)
         container.appendChild(barraLat);
-
 
     }
 }
