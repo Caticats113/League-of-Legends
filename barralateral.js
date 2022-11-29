@@ -1,12 +1,12 @@
-class Barra{
-    constructor(img, user, puntos, rango){
+class Barra {
+    constructor(img, user, puntos, rango) {
         this.img = img;
         this.user = user;
         this.puntos = puntos;
         this.rango = rango;
     }
-    renderSidebar(container){
-    console.log(this.rango)
+    renderSidebar(container) {
+        console.log(this.rango)
         let html = "";
         html = `
         <div class="logos">
@@ -57,19 +57,29 @@ class Barra{
                     <p class="fws" id="fsave">Champions</p>
                 </div>
             </a>
-            <a href="./home.html">
-                <div class="menubox" id="leavebox" >
+            
+                <div onclick="leave()" class="menubox" id="leavebox" >
                     <img alt="" src="./Img/leave.png" id="leaveicon"class="icons">
                     <p class="fws" id="fleave">Leave</p>
                 </div>
-            </a>
+    
 
         </div>`
 
-    let barraLat = document.createElement(`div`)
+        let barraLat = document.createElement(`div`)
         barraLat.innerHTML = html;
         console.log(barraLat)
         container.appendChild(barraLat);
 
+    }
+    leave(){
+        for (let i = 0; i < users.length; i++) {
+           if(users[i].isLogged == true){
+            users[i].isLogged = false;
+            let json = JSON.stringify(users);
+            localStorage.setItem('users', json);
+            window.location.href = "home.html";
+        }
+        }
     }
 }

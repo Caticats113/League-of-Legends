@@ -6,30 +6,59 @@ const storage = window.localStorage;
 const inputscont = document.getElementById('inputscont')
 const imgBox = document.getElementById('imgBox')
 
+let users = [];
+let savedUsers = localStorage.getItem('users')
+if (savedUsers !== null) {
+    users = JSON.parse(savedUsers);
+}
 
-let currentUSer = localStorage.getItem("currentUser");
-if(currentUSer !== null){window.location.href = "Main.html"};
-
-function perfil(container){
+function perfil(container) {
     let html = "";
     html = `
      <img src="./Img/profileimg.png" alt="profileimg" id="imgProfile">
     <img src="./Img/border.png" alt="profileborder" id="borderProfile">
     `
     container.innerHTML = html;
-
-    
 }
 perfil(imgBox);
 
+function userInfo(){
+    for (let i = 0; i < users.length; i++) {
+        if (users[i].isLogged = true) {
+            newusernameInput.value = users[i].name;
+            emailInput.value = users[i].email;
+            passwordInput.value = users[i]
+        }
 
-function applyChanges(i){
-    let json = localStorage.getItem('users');
-    if(json !== null){
-        let users = JSON.parse(json);
-        console.log(users);
-} 
+    }
 }
+userInfo()
+
+
+function applyChanges() {
+    for (let i = 0; i < users.length; i++) {
+        if (users[i].isLogged = true) {
+            let json = JSON.stringify(users);
+            localStorage.setItem('users', json);
+
+        }
+
+    }
+}
+
+function leave(){
+    for (let i = 0; i < users.length; i++) {
+       if(users[i].isLogged == true){
+        users[i].isLogged = false;
+        let json = JSON.stringify(users);
+        localStorage.setItem('users', json);
+        window.location.href = "home.html";
+    }
+    }
+}
+
+
+
 
 
 

@@ -3,31 +3,27 @@ const PasswordInput = document.getElementById('PasswordInput');
 const logBtn = document.getElementById('logBtn');
 const Storage = window.localStorage;
 
-let currentUSer = localStorage.getItem("currentUser");
-if(currentUSer !== null){window.location.href = "Main.html"};
-
-function login(){
-    let json = localStorage.getItem('users');
-    if(json !== null){
-        let users = JSON.parse(json);
-        console.log(users);
-        let email = EmailInput.value;
-        let password = PasswordInput.value; 
-        for(let i = 0; i < users.length; i++){
-            if(users[i].email === email){
-                if(users[i].password === password){
-                    window.location.href = "Main.html"
-                    let currentUSer = JSON.stringify(user[i]);
-                    localStorage.setItem("currentUser", currentUSer)
-                    return;
-                }else{
-                    alert('Email o contraseña son incorrectos')
-                    return;
-                }
+let users = [];
+let savedUsers = localStorage.getItem('users')
+if (savedUsers !== null) {
+    users = JSON.parse(savedUsers);
+}
+function login() {
+    let flag = false;
+    for (let i = 0; i < users.length; i++) {
+        if (EmailInput.value == users[i].email) {
+            if (PasswordInput.value == users[i].password) {
+                users[i].isLogged = true;
+                let json = JSON.stringify(users);
+                localStorage.setItem('users', json);
+                flag = true;
+                window.location.href = "Main.html";
+            return
             }
-            
-
-        };
+        }
+    } if (flag == false) {
+        alert("Email o contraseña incorrectos")
     }
-};
+
+}
 logBtn.addEventListener('click', login)

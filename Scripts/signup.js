@@ -6,29 +6,41 @@ const createBtn = document.getElementById('createBtn')
 const Storage = window.localStorage;
 
 let users = [];
-let savedUsers = localStorage.getItem('users') 
-if(savedUsers !== null){
+let savedUsers = localStorage.getItem('users')
+if (savedUsers !== null) {
     users = JSON.parse(savedUsers);
 }
 
 
-function signup(){
+function signup() {
 
-    if(PasswordInput.value.length <= 5){
+    if (PasswordInput.value.length <= 5) {
         alert('Las contraseñas deben de tener minimo 6 caracteres')
         return;
     }
-    let user = new UserC(
-        UserInput.value,
-        BirthdayInput.value,
-        EmailInput.value,
-        PasswordInput.value,
-        users.length
-    );
-    users.push(user);
-    let json = JSON.stringify(users);
-    localStorage.setItem('users', json);
-    window.location.href = "login.html";
+    let flag = false;
+    for (let i = 0; i < users.length; i++) {
+        if (EmailInput.value == users[i].email) {
+            flag = true;
+            alert("este correo ya esta en uso");
+        }
+    }
+    if (flag == false) {
+        let user = new UserC(
+            UserInput.value,
+            BirthdayInput.value,
+            EmailInput.value,
+            PasswordInput.value,
+            users.length,
+            false,
+            []
+        );
+        users.push(user);
+        let json = JSON.stringify(users);
+        localStorage.setItem('users', json);
+        window.location.href = "login.html";
+    }
+
 }
 
 
