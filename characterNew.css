@@ -1,9 +1,8 @@
 #cards {
-    margin-left:18%;
-    margin-top:13%;
+    margin-top:4%;
     display: flex;
     flex-flow: row wrap;
-    gap: 16px;
+    justify-content: space-around;
 }
 
 .card{
@@ -13,7 +12,7 @@
     width:fit-content;
     padding: 0.7%;
     border-radius: 6px;
-    margin: 0;
+    margin: 0 0 8% 0;
 }
 
 figure{

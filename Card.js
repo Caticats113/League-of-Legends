@@ -15,7 +15,7 @@ class Card{
         let html = "";
         html += `<div id="card${this.id}">
                     <a onclick="characterDetail(${this.id})">
-                        <img src="./Img/${this.img}.png" alt="" class="character" >
+                        <img src="${this.img}" alt="" class="character">
                     </a>
                     <figure>
                         <div>
