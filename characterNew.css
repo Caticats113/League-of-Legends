@@ -7,12 +7,16 @@
 
 .card{
     display: flex;
-    flex-direction: column;
+    flex-flow: column wrap;
     background-color:#030711;
-    width:fit-content;
+    width:20%;
     padding: 0.7%;
     border-radius: 6px;
     margin: 0 0 8% 0;
+}
+
+.card a img{
+    width:100%;
 }
 
 figure{

@@ -22,17 +22,15 @@ async function getChamps(){
     if(loadedlist === null){
         let cardsList = [];
         for(let i=0; i<list.length; i++){
+            let champId = list[i].id;
             let id = i;
             let name = list[i].name;
             let rol = list[i].tags[0];
             let img = `http://ddragon.leagueoflegends.com/cdn/img/champion/loading/${list[i].id}_0.jpg`;
             let favorite = false;
-            let subname = list[i].title;
-            let description = list[i].blurb;
-            let difficulty = list[i].info.difficulty;
         console.log("hola");
 
-            let card = new Card(id, name, rol, img, favorite, subname, description, difficulty);
+            let card = new Card(id, name, rol, img, favorite, champId);
             cardsList.push(card);
             card.render(cards);
         }
@@ -57,11 +55,9 @@ function generate(){
         let rol = cardsList[i].rol;
         let img = cardsList[i].img;
         let favorite = cardsList[i].favorite;
-        let subname = cardsList[i].subnames;
-        let description = cardsList[i].descriptions;
-        let difficulty = cardsList[i].difficulties;
+        let champId = cardsList[i].champId;
 
-        let card = new Card(id, name, rol, img, favorite, subname, description, difficulty);
+        let card = new Card(id, name, rol, img, favorite, champId);
         card.render(cards);
     }
 }
