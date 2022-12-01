@@ -1,70 +1,47 @@
-function createPage(detChamp) {
-    const detailPage = document.getElementById('asdghjk');
-    const body = document.getElementById('body');
-
-    let html = `
-    <div id="HeadingName"><h1><b>${detChamp.name}</b></h1></div>
-    <div id="container">
-    <div id="Cocontainer">
-        <div id="tittle">
-            <h3>${detChamp.subname}</h3>
-            <img id="Corasan" src="./ChInfo/Icono favoritos.png" alt="">
-            <br>
-            <div id="texto"><p>${detChamp.description}</p>
-            </div>
-        </div>
-        <div id="RoleDiff">
-            <img class="fight" src="./ChInfo/${detChamp.rol}.webp" alt="">
-            <div class="letras">
-                <p class="white"><b>Role</b></p>
-                <p class="gold"><b>${detChamp.rol}</b></p>
-            </div>
-            <img class="fight" src="./ChInfo/Difficult${detChamp.difficulty}.png" alt="">
-            <div class="letras">
-                <p class="white"><b>Difficulty</b></p>
-                <p class="gold"><b>${detChamp.difficulty}</b></p>
-            </div>
-        </div>
-        <div class="TextAbi">
-            <h3>Abilities</h3>
-        </div>
-        <div id="Abilities">
-            <span><img src="./ChInfo/${detChamp.name}P.png" alt=""> <p>P</p></span>
-            <span><img src="./ChInfo/${detChamp.name}Q.png" alt=""> <p>Q</p></span>
-            <span><img src="./ChInfo/${detChamp.name}W.png" alt=""> <p>W</p></span>
-            <span><img src="./ChInfo/${detChamp.name}E.png" alt=""> <p>E</p></span>
-            <span><img src="./ChInfo/${detChamp.name}R.png" alt=""> <p>R</p></span>
-        </div>
-    <a href="./character.html"><img id="baka" src="./ChInfo/back.png" alt=""></a>`;
-
-    detailPage.innerHTML = html;
-
-    body.style.backgroundImage = `url(./ChInfo/${detChamp.name}.jpg)`;
-}
-
-
     let loadedlist = localStorage.getItem("cardsList");
     let cardsList = [];
     cardsList = JSON.parse(loadedlist);
     console.log(cardsList)
 
+    let list = [];
+    let champId = "";
+    let id = "";
+    let favorite = "";
+
 function getId(){
     let params = new URLSearchParams(window.location.search);
-    let id = params.get('id');
+    id = params.get('id');
     console.log(id)
 
-    var i = id;
-    let name = cardsList[i].name;
-    let rol = cardsList[i].rol;
-    let img = cardsList[i].img;
-    let favorite = cardsList[i].favorite;
-    let subname = cardsList[i].subname;
-    let description = cardsList[i].description;
-    let difficulty = cardsList[i].difficulty;
-
-    let detChamp = new Card(id, name, rol, img, favorite, subname, description, difficulty);
-    createPage(detChamp);
-
+    champId = cardsList[id].champId;
+    favorite = cardsList[id].favorite;
 }
+async function getChampsDet(champId){
+    let url = `http://ddragon.leagueoflegends.com/cdn/12.22.1/data/en_US/champion/${champId}.json`;
+    let response = await fetch(url);
+    let data = await response.json();
+console.log(champId)
 
+    const dets = data.data;
+    for(const name in dets){
+        list.push(dets[name]);
+    }
+    console.log(list);
+
+    let name = list[0].name;
+    let subname = list[0].title;
+    let rol = list[0].tags;
+    let splashart = list[0].image.full;
+    let difficulty = list[0].info.difficulty;
+    let blurb = list[0].lore;
+    let p = list[0].passive.image.full;
+    let q = list[0].spells[0].image.full;
+    let w = list[0].spells[1].image.full;
+    let e = list[0].spells[2].image.full;
+    let r = list[0].spells[3].image.full;
+
+    let detChamp = new CardDet(id, name, subname, rol, splashart, favorite, champId, difficulty, blurb, p, q, w, e, r);
+    detChamp.createPage();
+}
 getId();
+getChampsDet(champId);

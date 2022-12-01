@@ -57,12 +57,12 @@ class Barra {
                     <p class="fws" id="fsave">Champions</p>
                 </div>
             </a>
-            
+
                 <div onclick="leave()" class="menubox" id="leavebox" >
                     <img alt="" src="./Img/leave.png" id="leaveicon"class="icons">
                     <p class="fws" id="fleave">Leave</p>
                 </div>
-    
+
 
         </div>`
 
@@ -74,12 +74,12 @@ class Barra {
     }
     leave(){
         for (let i = 0; i < users.length; i++) {
-           if(users[i].isLogged == true){
-            users[i].isLogged = false;
-            let json = JSON.stringify(users);
-            localStorage.setItem('users', json);
-            window.location.href = "home.html";
-        }
+            if(users[i].isLogged == true){
+                users[i].isLogged = false;
+                let json = JSON.stringify(users);
+                localStorage.setItem('users', json);
+                window.location.href = `./index.html`;
+            }
         }
     }
 }

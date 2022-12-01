@@ -31,6 +31,7 @@ body{
     position: absolute;
     top: 20%;
     right: 8%;
+    width: 4%;
 }
 #texto{
     padding-right: 48%;
@@ -39,7 +40,15 @@ body{
 #RoleDiff {
     display: flex;
     flex-direction: row;
+    gap: 10%;
 }
+
+#RoleDiff span{
+    display: flex;
+    flex-direction: row;
+    padding-left: 5%;
+}
+
 .fight{
     padding-left: 10%;
     width: 64px;
