@@ -29,7 +29,6 @@ function userInfo(){
             emailInput.value = users[i].email;
             passwordInput.value = users[i]
         }
-
     }
 }
 userInfo()
@@ -38,6 +37,9 @@ userInfo()
 function applyChanges() {
     for (let i = 0; i < users.length; i++) {
         if (users[i].isLogged = true) {
+            users[i].name = newusernameInput.value;
+            users[i].email = emailInput.value;
+            users[i].password = passwordInput.value;
             let json = JSON.stringify(users);
             localStorage.setItem('users', json);
 
