@@ -1,0 +1,67 @@
+#cards {
+    margin-top:4%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+
+.card{
+    display: flex;
+    flex-flow: column wrap;
+    background-color:#030711;
+    width:20%;
+    padding: 0.7%;
+    border-radius: 6px;
+    margin: 0 0 8% 0;
+}
+
+.card a img{
+    width:100%;
+}
+
+figure{
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0;
+}
+
+
+.name{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 160%;
+    color: #C28F2C;
+}
+
+.rol{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 90;
+    font-size: 85%;
+    color: #15B2D8;
+}
+
+.heartCard{
+    width: 15%;
+    margin:0;
+}
+
+.hide{
+    display: none;
+}
+
+#buscador{
+    background-color:#c2902c00;
+    border-color: #C28F2C;
+    border-radius: 20px;
+    margin-left: 40px;
+    padding: 6px;
+    color:#15B2D8;
+}
+
+#buscador ::placeholder{
+    color: #C28F2C;
+}
