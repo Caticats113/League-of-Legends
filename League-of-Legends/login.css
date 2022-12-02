@@ -1,0 +1,88 @@
+body{
+    background-image: url(./Log-Sign/Skin_Splash_Classic_Heimerdinger.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: 'Montserrat', sans-serif;
+}
+#Top img{
+    margin-top: 1%;
+    margin-left: 1%;
+    width: 10%;
+}
+#login{
+    position: absolute;
+    width: 38%;
+    height: 70%;
+    left: 5%;
+    margin-top: 1%;
+
+    background-color: #0307118d;
+    border-radius: 2%;
+}
+#login h1{
+    color: white;
+    margin-left: 4%;
+}
+#login p{
+    color: white;
+}
+#lilclass{
+    display: flex;
+    flex-direction: row;
+
+}
+.loginput{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-left: 45%;
+color: #15B2D8;
+
+}
+#lilclass{
+    margin-left: 4%;
+}
+#inputs{
+    margin-top: 6%;
+    font-size: large;
+}
+#inputs a{
+    text-decoration: none;
+}
+#EmailInput{
+    background-color: rgb(245, 245, 245);
+    width: 83%;
+    height: 50px;
+    border: none;
+    border-radius: 20px;
+    margin-left: 4%;
+    margin-top: 1%;
+}
+#PasswordInput{
+    background-color: rgb(245, 245, 245);
+    width: 83%;
+    height: 50px;
+    border: none;
+    border-radius: 20px;
+    margin-left: 4%;
+    margin-top: 5%;
+}
+#logBtn{
+    background-color: #15B2D8;
+    border: none;
+    width: 37%;
+    height: 40px;
+    margin-top: 10%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    border-radius: 20px;
+    cursor: pointer;
+}
+#inputs input{
+    padding-left: 5%;
+    font-size: medium;
+}
