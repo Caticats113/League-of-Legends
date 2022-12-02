@@ -1,5 +1,13 @@
 const cards = document.getElementById('cards');
-const menubar = document.getElementById('menubar')
+
+//Llamar a los usuarios que estan en el localStorage
+
+let users = []
+let savedUsers = localStorage.getItem("users");
+    if (savedUsers !== null) {
+        userList = JSON.parse(savedUsers);
+    };
+
 
 //Creacion de la lista vacía de todas las tarjetas
 let loadedlist = localStorage.getItem("cardsList");
@@ -67,6 +75,7 @@ function generate(){
 function addRemoveFavoriteList(num){
     if(cardsList[num].favorite === false){
         cardsList[num].favorite = true;
+        
         let json = JSON.stringify(cardsList);
         localStorage.setItem("cardsList", json);
         generate();
@@ -74,6 +83,7 @@ function addRemoveFavoriteList(num){
 
     else {
         cardsList[num].favorite = false;
+
         let json = JSON.stringify(cardsList);
         localStorage.setItem("cardsList", json);
         generate();
@@ -84,15 +94,7 @@ function characterDetail(id){
     window.location.href = `./characterDetail.html?id=`+ id;
 }
 
-let imagennice = "./Img/profileimg.png";
-let usernamenice = "Anne_de_larregui";
-let pointnice = "10000pt";
-let rangenice = "Granmaster II";
 
-let barrita = new Barra(
-    imagennice, usernamenice, pointnice, rangenice
-)
-barrita.renderSidebar(menubar)
 
 
 

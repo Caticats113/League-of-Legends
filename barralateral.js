@@ -78,6 +78,7 @@ class Barra {
                 users[i].isLogged = false;
                 let json = JSON.stringify(users);
                 localStorage.setItem('users', json);
+                
                 window.location.href = `./index.html`;
             }
         }

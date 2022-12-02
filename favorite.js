@@ -1,5 +1,10 @@
 const cards = document.getElementById("cards")
-const menubar = document.getElementById('menubar')
+
+let users = []
+let savedUsers = localStorage.getItem("users");
+    if (savedUsers !== null) {
+        userList = JSON.parse(savedUsers);
+    };
 
 let loadedlist = localStorage.getItem("cardsList");
 if(loadedlist === null){
@@ -29,21 +34,19 @@ function generate(){
 function addRemoveFavoriteList(num){
     if(cardsList[num].favorite === true){
         cardsList[num].favorite = false;
+        for(let i = 0; i < users.lengtht; i++){
+            if(users[i].isLogged == true){
+                users[i].favs = cardsList;
+                let json = JSON.stringify(users);
+                localStorage.setItem("users", json);
+            }
+        }
         let json = JSON.stringify(cardsList);
         localStorage.setItem("cardsList", json);
         generate();
     }
 }
-//data mockup , a partir de este punto se realiza un data mockup ya que aun no se ha terminado el localStorage, maa que todo es para hacerse una idea de las variables.
-let imgnice = "./Img/profileimg.png";
-let usernamenice = "Anne_de_larregui";
-let pointnice = "10000pt";
-let rangenice = "Granmaster II";
 
-let barrita = new Barra(
-    imgnice, usernamenice, pointnice, rangenice
-)
-barrita.renderSidebar(menubar);
 
 
 
