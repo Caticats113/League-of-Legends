@@ -1,5 +1,5 @@
 class UserC{
-    constructor(name, birthday, email, password, id, isLogged, favs){
+    constructor(name, birthday, email, password, id, isLogged, favs, points, rank){
         this.name = name;
         this.birthday = birthday;
         this.email = email;
@@ -7,5 +7,7 @@ class UserC{
         this.id = id;
         this.isLogged = isLogged;
         this.favs = favs;
+        this.points = points;
+        this.rank = rank;
     }
 }

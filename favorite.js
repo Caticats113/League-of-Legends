@@ -1,5 +1,17 @@
 const cards = document.getElementById("cards")
-const menubar = document.getElementById('menubar')
+
+let users = []
+let savedUsers = localStorage.getItem("users");
+    if (savedUsers !== null) {
+        users = JSON.parse(savedUsers);
+    };
+
+    let userId = "";
+for(let i = 0; i < users.length; i++){
+    if(users[i].isLogged == true){
+        userId = i;
+    }
+}
 
 let loadedlist = localStorage.getItem("cardsList");
 if(loadedlist === null){
@@ -9,7 +21,6 @@ if(loadedlist === null){
     generate();
 }
 
-
 function generate(){
     cards.innerHTML = "";
     for(let i=0; i<cardsList.length; i++){
@@ -17,7 +28,7 @@ function generate(){
         let name = cardsList[i].name;
         let rol = cardsList[i].rol;
         let img = cardsList[i].img;
-        let favorite = cardsList[i].favorite;
+        let favorite = users[userId].favs[i];
         let card = new Card(id, name, rol, img, favorite);
 
         if(favorite === true){
@@ -26,24 +37,20 @@ function generate(){
     }
 }
 
-function addRemoveFavoriteList(num){
-    if(cardsList[num].favorite === true){
-        cardsList[num].favorite = false;
-        let json = JSON.stringify(cardsList);
-        localStorage.setItem("cardsList", json);
+function addRemoveFavoriteList(i){
+    if(users[userId].favs[i] === false){
+        users[userId].favs[i] = true;
+
+        let json = JSON.stringify(users);
+        localStorage.setItem("users", json);
+        generate();
+    }
+
+    else {
+        users[userId].favs[i] = false;
+
+        let json = JSON.stringify(users);
+        localStorage.setItem("users", json);
         generate();
     }
 }
-//data mockup , a partir de este punto se realiza un data mockup ya que aun no se ha terminado el localStorage, maa que todo es para hacerse una idea de las variables.
-let imgnice = "./Img/profileimg.png";
-let usernamenice = "Anne_de_larregui";
-let pointnice = "10000pt";
-let rangenice = "Granmaster II";
-
-let barrita = new Barra(
-    imgnice, usernamenice, pointnice, rangenice
-)
-barrita.renderSidebar(menubar);
-
-
-

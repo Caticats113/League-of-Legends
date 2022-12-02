@@ -24,12 +24,11 @@ perfil(imgBox);
 
 function userInfo(){
     for (let i = 0; i < users.length; i++) {
-        if (users[i].isLogged = true) {
+        if (users[i].isLogged == true) {
             newusernameInput.value = users[i].name;
             emailInput.value = users[i].email;
             passwordInput.value = users[i]
         }
-
     }
 }
 userInfo()
@@ -37,10 +36,15 @@ userInfo()
 
 function applyChanges() {
     for (let i = 0; i < users.length; i++) {
-        if (users[i].isLogged = true) {
+        console.log(users[i])
+        if (users[i].isLogged == true) {
+           console.log(users[i],"Entrada")
+            users[i].name = newusernameInput.value;
+            users[i].email = emailInput.value;
+            users[i].password = passwordInput.value;
             let json = JSON.stringify(users);
             localStorage.setItem('users', json);
-
+            console.log(users[i],"Salida")
         }
 
     }
@@ -52,7 +56,7 @@ function leave(){
         users[i].isLogged = false;
         let json = JSON.stringify(users);
         localStorage.setItem('users', json);
-        window.location.href = "home.html";
+        window.location.href = "./index.html";
     }
     }
 }

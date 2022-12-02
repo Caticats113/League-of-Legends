@@ -11,6 +11,10 @@ if (savedUsers !== null) {
     users = JSON.parse(savedUsers);
 }
 
+let userFavs = [];
+for(i = 0; i<162; i++){
+    userFavs.push(false);
+}
 
 function signup() {
 
@@ -26,6 +30,9 @@ function signup() {
         }
     }
     if (flag == false) {
+        let points = Math.floor(Math.random() * 100)
+        Ranks = ["Iron IV", "Iron III", "Iron II", "Iron I", "Bronze IV", "Bronze III", "Bronze II", "Bronze I", "Silver IV", "Silver III", "Silver II", "Silver I", "Gold IV", "Gold III", "Gold II", "Gold I", "Platinum IV", "Platinum III", "Platinum II", "Platinum I", "Diamond IV", "Diamond III", "Diamond II", "Diamond I", "Master", "Grandmaster", "Challenger"]
+        let rank = Ranks[Math.floor(Math.random() * 27)]
         let user = new UserC(
             UserInput.value,
             BirthdayInput.value,
@@ -33,7 +40,9 @@ function signup() {
             PasswordInput.value,
             users.length,
             false,
-            []
+            userFavs,
+            points,
+            rank
         );
         users.push(user);
         let json = JSON.stringify(users);
