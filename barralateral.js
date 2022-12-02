@@ -5,7 +5,7 @@ class Barra {
         this.puntos = puntos;
         this.rango = rango;
     }
-    renderSidebar(container) {
+    renderSidebar(container){
         console.log(this.rango)
         let html = "";
         html = `
@@ -22,8 +22,6 @@ class Barra {
             <p id="username">${this.user}</p>
             <a href="./editprofile.html" id="usern">Edit profile</a>
         </div>
-
-
 
         <div class="boxpoints">
             <div class="yellow">
@@ -71,16 +69,5 @@ class Barra {
         console.log(barraLat)
         container.appendChild(barraLat);
 
-    }
-    leave(){
-        for (let i = 0; i < users.length; i++) {
-            if(users[i].isLogged == true){
-                users[i].isLogged = false;
-                let json = JSON.stringify(users);
-                localStorage.setItem('users', json);
-                
-                window.location.href = `./index.html`;
-            }
-        }
     }
 }

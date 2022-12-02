@@ -1,4 +1,3 @@
-
 class Card{
     constructor(id, name, rol, img, favorite, champId){
         this.id = id;

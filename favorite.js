@@ -3,8 +3,15 @@ const cards = document.getElementById("cards")
 let users = []
 let savedUsers = localStorage.getItem("users");
     if (savedUsers !== null) {
-        userList = JSON.parse(savedUsers);
+        users = JSON.parse(savedUsers);
     };
+
+    let userId = "";
+for(let i = 0; i < users.length; i++){
+    if(users[i].isLogged == true){
+        userId = i;
+    }
+}
 
 let loadedlist = localStorage.getItem("cardsList");
 if(loadedlist === null){
@@ -14,7 +21,6 @@ if(loadedlist === null){
     generate();
 }
 
-
 function generate(){
     cards.innerHTML = "";
     for(let i=0; i<cardsList.length; i++){
@@ -22,7 +28,7 @@ function generate(){
         let name = cardsList[i].name;
         let rol = cardsList[i].rol;
         let img = cardsList[i].img;
-        let favorite = cardsList[i].favorite;
+        let favorite = users[userId].favs[i];
         let card = new Card(id, name, rol, img, favorite);
 
         if(favorite === true){
@@ -31,22 +37,20 @@ function generate(){
     }
 }
 
-function addRemoveFavoriteList(num){
-    if(cardsList[num].favorite === true){
-        cardsList[num].favorite = false;
-        for(let i = 0; i < users.lengtht; i++){
-            if(users[i].isLogged == true){
-                users[i].favs = cardsList;
-                let json = JSON.stringify(users);
-                localStorage.setItem("users", json);
-            }
-        }
-        let json = JSON.stringify(cardsList);
-        localStorage.setItem("cardsList", json);
+function addRemoveFavoriteList(i){
+    if(users[userId].favs[i] === false){
+        users[userId].favs[i] = true;
+
+        let json = JSON.stringify(users);
+        localStorage.setItem("users", json);
+        generate();
+    }
+
+    else {
+        users[userId].favs[i] = false;
+
+        let json = JSON.stringify(users);
+        localStorage.setItem("users", json);
         generate();
     }
 }
-
-
-
-

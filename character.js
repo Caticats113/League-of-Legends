@@ -1,21 +1,27 @@
 const cards = document.getElementById('cards');
 
 //Llamar a los usuarios que estan en el localStorage
-
 let users = []
 let savedUsers = localStorage.getItem("users");
     if (savedUsers !== null) {
-        userList = JSON.parse(savedUsers);
+        users = JSON.parse(savedUsers);
     };
-
 
 //Creacion de la lista vacía de todas las tarjetas
 let loadedlist = localStorage.getItem("cardsList");
 let cardsList = [];
-console.log(cardsList)
 
 //Lista de info del api
 let list = [];
+
+let userId = "";
+for(let i = 0; i < users.length; i++){
+    if(users[i].isLogged == true){
+        userId = i;
+    }
+}
+
+console.log(userId);
 
 async function getChamps(){
     let url = "http://ddragon.leagueoflegends.com/cdn/12.22.1/data/en_US/champion.json";
@@ -29,6 +35,7 @@ async function getChamps(){
 
     if(loadedlist === null){
         let cardsList = [];
+        let usersFavs = [];
         for(let i=0; i<list.length; i++){
             let champId = list[i].id;
             let id = i;
@@ -36,7 +43,6 @@ async function getChamps(){
             let rol = list[i].tags[0];
             let img = `http://ddragon.leagueoflegends.com/cdn/img/champion/loading/${list[i].id}_0.jpg`;
             let favorite = false;
-        console.log("hola");
 
             let card = new Card(id, name, rol, img, favorite, champId);
             cardsList.push(card);
@@ -62,7 +68,7 @@ function generate(){
         let name = cardsList[i].name;
         let rol = cardsList[i].rol;
         let img = cardsList[i].img;
-        let favorite = cardsList[i].favorite;
+        let favorite = users[userId].favs[i];
         let champId = cardsList[i].champId;
 
         let card = new Card(id, name, rol, img, favorite, champId);
@@ -72,20 +78,20 @@ function generate(){
 
 //Al hacer click en el heart se cambia el estado del favorite a true o false y se guarda en el local storage
 //y se vuelven a generar las cartas con los cambios
-function addRemoveFavoriteList(num){
-    if(cardsList[num].favorite === false){
-        cardsList[num].favorite = true;
-        
-        let json = JSON.stringify(cardsList);
-        localStorage.setItem("cardsList", json);
+function addRemoveFavoriteList(i){
+    if(users[userId].favs[i] === false){
+        users[userId].favs[i] = true;
+
+        let json = JSON.stringify(users);
+        localStorage.setItem("users", json);
         generate();
     }
 
     else {
-        cardsList[num].favorite = false;
+        users[userId].favs[i] = false;
 
-        let json = JSON.stringify(cardsList);
-        localStorage.setItem("cardsList", json);
+        let json = JSON.stringify(users);
+        localStorage.setItem("users", json);
         generate();
     }
 }
@@ -93,12 +99,3 @@ function addRemoveFavoriteList(num){
 function characterDetail(id){
     window.location.href = `./characterDetail.html?id=`+ id;
 }
-
-
-
-
-
-
-
-
-

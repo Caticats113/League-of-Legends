@@ -11,6 +11,10 @@ if (savedUsers !== null) {
     users = JSON.parse(savedUsers);
 }
 
+let userFavs = [];
+for(i = 0; i<162; i++){
+    userFavs.push(false);
+}
 
 function signup() {
 
@@ -36,7 +40,7 @@ function signup() {
             PasswordInput.value,
             users.length,
             false,
-            [],
+            userFavs,
             points,
             rank
         );
