@@ -14,7 +14,7 @@ class Barra {
             <img src="./Img/logoLOL.webp" alt="" id="log2" >
         </div>
         <div class="profile">
-            <img src="${this.img}" alt="profileimg" id="profileimg">
+        <img src="http://ddragon.leagueoflegends.com/cdn/12.22.1/img/profileicon/300${this.img}.png"" alt="profileimg" id="imgProfile">
             <img src="./Img/border.png" alt="profileborder" id="profileborder">
         </div>
         <div class="textprofile">
@@ -65,9 +65,9 @@ class Barra {
         </div>`
 
         let barraLat = document.createElement(`div`)
+        barraLat.innerHTML = "";
         barraLat.innerHTML = html;
         console.log(barraLat)
         container.appendChild(barraLat);
-
     }
 }

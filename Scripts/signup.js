@@ -42,7 +42,8 @@ function signup() {
             false,
             userFavs,
             points,
-            rank
+            rank,
+            0
         );
         users.push(user);
         let json = JSON.stringify(users);

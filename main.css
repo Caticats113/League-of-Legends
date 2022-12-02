@@ -43,13 +43,12 @@ span{
     margin-bottom: 10%;
     display: flex;
     justify-content: center;
-
 }
 
-
-#profileimg {
+#imgProfile {
     margin-top: 16%;
     width: 67%;
+    border-radius: 50%;
 }
 
 #profileborder {
@@ -101,7 +100,6 @@ span{
     font-size: 80%;
     margin: 3.2%;
     margin-top: 0%;
-
 }
 
 .tyellow{

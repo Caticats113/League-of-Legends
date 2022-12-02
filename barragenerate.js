@@ -10,6 +10,7 @@ if (localStorage.getItem('users') !== null) {
    //Esto muestra en username,points y rank en la barra lateral
 for(let i = 0; i < users.length; i++){
     if(users[i].isLogged == true){
+        imagennice = users[i].img;
         usernamenice = users[i].name;
         pointnice = users[i].points;
         rangenice = users[i].rank;
