@@ -15,7 +15,7 @@ if (savedUsers !== null) {
 function perfil(container) {
     let html = "";
     html = `
-     <img src="./Img/profileimg.png" alt="profileimg" id="imgProfile">
+    <img src="./Img/profileimg.png" alt="profileimg" id="imgProfile">
     <img src="./Img/border.png" alt="profileborder" id="borderProfile">
     `
     container.innerHTML = html;
@@ -48,7 +48,7 @@ function applyChanges() {
 
 function leave(){
     for (let i = 0; i < users.length; i++) {
-       if(users[i].isLogged == true){
+        if(users[i].isLogged == true){
         users[i].isLogged = false;
         let json = JSON.stringify(users);
         localStorage.setItem('users', json);
@@ -64,4 +64,45 @@ function leave(){
 
 saveBtn.addEventListener('click', applyChanges)
 
+const editimg = document.getElementById("editimg")
+const popup = document.getElementById('popup')
+const chooseimg = document.getElementById('chooseimg')
+const inputsCont = document.getElementById('inputsCont')
+const btnSaveImg = document.getElementById('btnSaveImg')
+
+
+
+function showImgProfile(container){
+    let html = "";
+    for(let i=0; i<10; i++){
+        let img = "http://ddragon.leagueoflegends.com/cdn/12.22.1/img/profileicon/" + "300" + i + ".png";
+        html += `<img id="profile${i}" onclick="selectImg(${i})" class="imgProfile" src="${img}">`
+        container.innerHTML = html;
+    }
+}
+
+showImgProfile(popup);
+
+function showWindowChoose(){
+    chooseimg.classList.remove('hide');
+    inputsCont.classList.add('blur');
+
+}
+editimg.addEventListener('click', showWindowChoose);
+
+function hideWindowChoose(){
+    chooseimg.classList.add('hide');
+    inputsCont.classList.remove('blur');
+}
+
+btnSaveImg.addEventListener('click', hideWindowChoose );
+
+function selectImg(i){
+    let html = "";
+    html = `
+    <img src="http://ddragon.leagueoflegends.com/cdn/12.22.1/img/profileicon/300${i}.png"" alt="profileimg" id="imgProfile">
+    <img src="./Img/border.png" alt="profileborder" id="borderProfile">
+    `
+    imgBox.innerHTML = html;
+}
 

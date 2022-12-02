@@ -208,33 +208,34 @@ label.topacity{
 
 #inputsCont{
     margin-left: 20%;
-    margin-right: 50%;
     background-color: #030711;
     margin-top: 2%;
     width: 77%;
-    height: 490px;
+    height: fit-content;
     display: flex;
     flex-direction: column;
     gap: 5%;
     align-items: center;
     justify-content:center;
-    padding-top: 8%;
-
+    padding-top: 4%;
+    padding-bottom: 4%;
 
 }
 
 #inputsCont input{
-    width: 300px;
-    height: 35px;
+    padding: 6%;
     border: none;
     border-radius: 16px;
     background-color:#817c7c77 ;
     color: #FFFFFF;
+    z-index: 2;
+
+
 
 }
 
 #saveBtn{
-    width: 17%;
+    width: 100%;
     height: 8%;
     border-radius: 16px;
 }
@@ -251,16 +252,17 @@ label.topacity{
 
 #imgProfile{
     position: absolute;
-    width: 10%;
+    width: 8%;
     display: flex;
-    bottom: 55%;
+    border-radius: 50%;
+    top: 16%;
 
 }
 
 #borderProfile{
     position: absolute;
-    top: 16%;
-    width: 15%;
+    top: 10%;
+    width: 12%;
 
 }
 
@@ -287,4 +289,49 @@ label.topacity{
 #textbtn{
     color: aliceblue;
     font-style: initial;
+}
+
+.text{
+    color: #15B2D8;
+}
+#popup{
+    display: flex;
+    flex-direction: row;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    z-index: 1;
+
+}
+::-webkit-scrollbar{
+    display: none;
+}
+#chooseimg{
+    position: absolute;
+    padding: 1%;
+    background-color: #030711;
+    width: 50%;
+    z-index: 1;
+    top: 30%;
+    left: 32%;
+    border-radius: 8px;
+}
+
+.imgProfile{
+    margin: 5%;
+    width: 10%;
+    border-radius: 50%;
+}
+
+.btn{
+    background-color: #15B2D8;
+    color: #FFFFFF;
+    padding: 1%;
+    border-radius: 15px;
+}
+
+.hide{
+    display: none;
+}
+.blur{
+    opacity: 0.6;
 }
