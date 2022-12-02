@@ -45,7 +45,7 @@ figure{
 }
 
 .heartCard{
-    width: 15%;
+    width: 12%;
     margin:0;
 }
 
@@ -64,4 +64,8 @@ figure{
 
 #buscador ::placeholder{
     color: #C28F2C;
+}
+
+.filtro{
+    display: none;
 }

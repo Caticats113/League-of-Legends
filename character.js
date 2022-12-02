@@ -95,6 +95,22 @@ let barrita = new Barra(
 barrita.renderSidebar(menubar)
 
 
+document.addEventListener('keyup', e =>{
+    if(e.target.matches('#buscador')){
+        document.querySelectorAll('.card').forEach(card=>{
+            card.textContent.toLowerCase().includes(e.target.value)
+            ? card.classList.remove('filtro')
+            : card.classList.add('filtro')
+        })
+    }
+})
+
+
+
+
+
+
+
 
 
 
